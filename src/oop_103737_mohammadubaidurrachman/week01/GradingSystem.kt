@@ -7,5 +7,3 @@ fun main() {
 
 fun calculateStatus(score: Int) =
     if (score >= 75) "Pass" else "Fail"
-
-
