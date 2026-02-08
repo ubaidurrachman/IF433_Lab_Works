@@ -10,7 +10,11 @@ fun main() {
         title = gameTitle,
         finalPrice = finalPrice
     )
+
+    val userNote: String? = null
+    println("Note: ${userNote ?: "Tidak ada catatan"}")
 }
+
 
 
 fun calculateDiscount(price: Int) =
