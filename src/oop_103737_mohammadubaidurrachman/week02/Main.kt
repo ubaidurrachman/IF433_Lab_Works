@@ -5,24 +5,30 @@ import java.util.Scanner
 fun main() {
     val scanner = Scanner(System.`in`)
 
+    println("Pilih jalur pendaftaran:")
+    println("1. Dengan Jurusan")
+    println("2. Tanpa Jurusan")
+    print("Pilihan: ")
+    val choice = scanner.nextInt()
+    scanner.nextLine()
+
     print("Masukkan NIM: ")
     val nim = scanner.nextLine()
-
-    if (nim.length != 10) {
-        println("NIM tidak valid! Harus 10 digit.")
-        return
-    }
 
     print("Masukkan Nama: ")
     val name = scanner.nextLine()
 
-    print("Masukkan Jurusan: ")
-    val major = scanner.nextLine()
-
-    val student = Student(nim, name, major)
+    val student = if (choice == 1) {
+        print("Masukkan Jurusan: ")
+        val major = scanner.nextLine()
+        Student(nim, name, major)
+    } else {
+        Student(nim, name)
+    }
 
     println("\nData Mahasiswa:")
     println("NIM: ${student.nim}")
     println("Nama: ${student.name}")
     println("Jurusan: ${student.major}")
+    println("IPK: ${student.gpa}")
 }
