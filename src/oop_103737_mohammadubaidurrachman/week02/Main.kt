@@ -56,4 +56,48 @@ fun main() {
     println("Durasi: ${loan.loanDuration}")
     println("Denda: Rp ${loan.calculateFine()}")
 
+    println("\n=== MINI RPG ===")
+
+    print("Nama Hero: ")
+    val heroName = scanner.nextLine()
+
+    print("Base Damage: ")
+    val damage = scanner.nextInt()
+    scanner.nextLine()
+
+    val hero = Hero(heroName, damage)
+    var enemyHp = 100
+
+    while (hero.isAlive() && enemyHp > 0) {
+
+        println("\n1. Serang")
+        println("2. Kabur")
+        print("Pilihan: ")
+        val choiceBattle = scanner.nextInt()
+        scanner.nextLine()
+
+        if (choiceBattle == 1) {
+            hero.attack("Enemy")
+            enemyHp -= hero.baseDamage
+            println("HP Enemy: $enemyHp")
+
+            if (enemyHp > 0) {
+                val enemyDamage = (10..20).random()
+                println("Enemy menyerang balik!")
+                hero.takeDamage(enemyDamage)
+                println("HP Hero: ${hero.hp}")
+            }
+        } else {
+            println("Kamu kabur!")
+            break
+        }
+    }
+
+    if (hero.hp > 0 && enemyHp <= 0) {
+        println("Hero menang!")
+    } else if (hero.hp <= 0) {
+        println("Hero kalah!")
+    }
+
+
 }
