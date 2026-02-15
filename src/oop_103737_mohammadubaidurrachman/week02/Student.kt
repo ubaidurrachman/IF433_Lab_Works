@@ -11,9 +11,9 @@ class Student(
         if (nim.length != 10) {
             println("WARNING: NIM harus 10 digit!")
         }
-
-        if (name.isBlank()) {
-            println("WARNING: Nama tidak boleh kosong!")
-        }
     }
+
+    // Secondary Constructor
+    constructor(nim: String, name: String) :
+            this(nim, name, "Non-Matriculated")
 }
