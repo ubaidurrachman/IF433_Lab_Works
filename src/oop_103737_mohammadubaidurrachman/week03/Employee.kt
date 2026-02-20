@@ -7,6 +7,10 @@ class Employee(
 
     var salary: Int = salary
         set(value) {
-            this.salary = value //  sengaja salah (infinite recursion)
+            if (value < 0) {
+                println("WARNING: Salary tidak boleh negatif!")
+            } else {
+                field = value
+            }
         }
 }
