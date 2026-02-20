@@ -24,7 +24,6 @@ class Employee(
         }
     }
 
-    // COMPUTED PROPERTY
     val bonus: Int
         get() = salary / 10
 }
