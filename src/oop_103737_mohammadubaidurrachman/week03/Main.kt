@@ -12,4 +12,13 @@ fun main() {
 
     println("Salary: ${e.salary}")
     println("Bonus: ${e.bonus}")
+
+    println("\n=== Weapon Test ===")
+    val weapon = Weapon("Excalibur", 100)
+
+    weapon.damage = -50
+    weapon.damage = 9999
+
+    println("Damage: ${weapon.damage}")
+    println("Tier: ${weapon.tier}")
 }
