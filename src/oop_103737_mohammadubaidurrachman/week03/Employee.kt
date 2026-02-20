@@ -13,4 +13,16 @@ class Employee(
                 field = value
             }
         }
+
+    // 🔒 private property
+    private var performanceRating: Int = 0
+
+    // public method untuk update aman
+    fun updatePerformanceRating(newRating: Int) {
+        if (newRating in 1..5) {
+            performanceRating = newRating
+        } else {
+            println("Rating harus antara 1 sampai 5")
+        }
+    }
 }
