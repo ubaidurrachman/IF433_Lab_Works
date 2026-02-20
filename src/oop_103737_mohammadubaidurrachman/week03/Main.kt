@@ -21,4 +21,12 @@ fun main() {
 
     println("Damage: ${weapon.damage}")
     println("Tier: ${weapon.tier}")
+
+    println("\n=== Player Test ===")
+    val player = Player("Ubai")
+
+    player.addXp(50)
+    player.addXp(60)
+
+    println("Level sekarang: ${player.level}")
 }
