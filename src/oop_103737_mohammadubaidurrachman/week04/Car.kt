@@ -12,4 +12,8 @@ open class Car(brand: String, val numberOfDoors: Int) : Vehicle(brand) {
 
         }
     }
+
+    fun openTrunk() {
+        TODO("Not yet implemented")
+    }
 }
