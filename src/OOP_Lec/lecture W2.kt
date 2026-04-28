@@ -1,4 +1,4 @@
-package OOP_Week02
+package OOP_Lec
 
 class MyCar {
     var warna: String = "abu";
