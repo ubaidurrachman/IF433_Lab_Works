@@ -3,6 +3,7 @@ package oop_103737_mohammadubaidurrachman.week13
 import java.io.File
 import java.io.FileNotFoundException
 
+
 fun saveTrades(trades: List<TradeRecord>, path: String) {
 
     File(path).printWriter().use { writer ->
@@ -71,4 +72,7 @@ fun main() {
     )
 
     saveTrades(trades, "crypto_trades.csv")
+    File("crypto_trades.csv")
+        .appendText("CORRUPT_ID,DOGEUSDT,Hold,XX,YY\n")
 }
+
