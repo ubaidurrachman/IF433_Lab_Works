@@ -8,3 +8,19 @@ data class Student(
     val age: Int,
     val gpa: Double
 )
+
+fun Student.toCsv(): String {
+
+    return "$name,$age,$gpa"
+}
+
+fun fromCsv(line: String): Student {
+
+    val parts = line.split(",")
+
+    return Student(
+        parts[0],
+        parts[1].toInt(),
+        parts[2].toDouble()
+    )
+}
