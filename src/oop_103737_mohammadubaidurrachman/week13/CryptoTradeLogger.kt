@@ -46,3 +46,17 @@ fun fromCsvTrade(line: String): TradeRecord? {
         null
     }
 }
+
+fun loadTrades(path: String): List<TradeRecord> {
+
+    return try {
+
+        File(path)
+            .readLines()
+            .mapNotNull { fromCsvTrade(it) }
+
+    } catch (e: FileNotFoundException) {
+
+        emptyList()
+    }
+}
