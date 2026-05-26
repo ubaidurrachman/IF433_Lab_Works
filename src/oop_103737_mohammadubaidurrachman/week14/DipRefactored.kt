@@ -11,3 +11,10 @@ class PostgresDatabase : Database {
         return listOf("pg_data1", "pg_data2")
     }
 }
+class SafeUserService(
+    private val db: Database
+) {
+
+    fun getUser(id: Int) =
+        db.query("SELECT * FROM users WHERE id=$id")
+}
