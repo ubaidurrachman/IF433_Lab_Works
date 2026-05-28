@@ -62,6 +62,5 @@ fun main() {
     hub.addDevice(cctv)
 
     hub.activateSecurityMode()
-
     hub.turnOffAllSwitches()
 }
