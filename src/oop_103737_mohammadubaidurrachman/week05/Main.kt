@@ -2,6 +2,10 @@ package oop_103737_mohammadubaidurrachman.week05
 
 fun main() {
 
+    // =========================
+    // POLYMORPHISM PEGAWAI
+    // =========================
+
     val dosen1 = Dosen(
         nama = "Pak Alex",
         nidn = "0123456"
@@ -41,29 +45,55 @@ fun main() {
         }
 
         println("----------------------")
-        println("\n=== TEST OVERLOADING ===")
-        val math = MathHelper()
-        println("Luas Persegi: ${math.hitungLuas(4)}")
-        println("Luas Persegi Panjang: ${math.hitungLuas(5, 3)}")
-        println("Luas Lingkaran: ${math.hitungLuas(7.0)}")
-        println("\n=== PAYMENT SYSTEM ===")
+    }
 
-        val ewallet = EWallet(
-            "Ubai Wallet",
-            50000.0
-        )
+    // =========================
+    // TEST OVERLOADING
+    // =========================
 
-        val creditCard = CreditCard(
-            "Ubai Card",
-            100000.0
-        )
+    println("\n=== TEST OVERLOADING ===")
 
-        val paymentMethods: List<PaymentMethod> =
-            listOf(ewallet, creditCard)
+    val math = MathHelper()
 
-        for (payment in paymentMethods) {
+    println("Luas Persegi: ${math.hitungLuas(4)}")
 
-            println("\nPembayaran menggunakan ${payment.accountName}")
+    println("Luas Persegi Panjang: ${math.hitungLuas(5, 3)}")
+
+    println("Luas Lingkaran: ${math.hitungLuas(7.0)}")
+
+    // =========================
+    // PAYMENT SYSTEM
+    // =========================
+
+    println("\n=== PAYMENT SYSTEM ===")
+
+    val ewallet = EWallet(
+        "Ubai Wallet",
+        50000.0
+    )
+
+    val creditCard = CreditCard(
+        "Ubai Card",
+        100000.0
+    )
+
+    val paymentMethods: List<PaymentMethod> =
+        listOf(ewallet, creditCard)
+
+    for (payment in paymentMethods) {
+
+        println("\nPembayaran menggunakan ${payment.accountName}")
+
+        payment.processPayment(75000.0)
+
+        // Smart Casting
+        if (payment is EWallet) {
+
+            println("EWallet terdeteksi, melakukan top up...")
+
+            payment.topUp(50000.0)
+
+            println("Mencoba pembayaran ulang...")
 
             payment.processPayment(75000.0)
         }
