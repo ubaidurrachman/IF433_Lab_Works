@@ -29,7 +29,7 @@ class SmartHomeHub {
                 device.startRecord()
             }
 
-            if (device is SmartSpeaker) {
+            if  (device is SmartSpeaker) {
 
                 device.playMusic("Sirine Peringatan")
             }
